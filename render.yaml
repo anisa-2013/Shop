@@ -2,6 +2,7 @@ services:
   - type: web
     name: diploma-shop-api
     runtime: python
+    plan: free
     buildCommand: ./build.sh
     startCommand: gunicorn config.wsgi:application
     envVars:
@@ -17,5 +18,6 @@ services:
           property: connectionString
 databases:
   - name: diploma-shop-db
+    plan: free
     databaseName: shop
     user: shop
