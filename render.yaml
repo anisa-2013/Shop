@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: diploma-shop-api
+    runtime: python
+    buildCommand: ./build.sh
+    startCommand: gunicorn config.wsgi:application
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: .onrender.com
+      - key: DATABASE_URL
+        fromDatabase:
+          name: diploma-shop-db
+          property: connectionString
+databases:
+  - name: diploma-shop-db
+    databaseName: shop
+    user: shop
