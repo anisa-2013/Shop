@@ -128,3 +128,20 @@ Django Admin:
 ## Автор
 
 Дипломный проект «Разработка API-сервиса для интернет-магазина».
+
+## Переменные окружения
+
+Для локального запуска и развертывания проекта используются следующие переменные окружения:
+
+- `SECRET_KEY` — секретный ключ Django
+- `DEBUG` — режим отладки (`True` или `False`)
+- `ALLOWED_HOSTS` — список разрешённых хостов
+- `DATABASE_URL` — URL подключения к базе данных PostgreSQL
+
+Пример файла `.env`:
+
+```env
+SECRET_KEY=your-secret-key
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+DATABASE_URL=postgresql://user:password@localhost:5432/shop
